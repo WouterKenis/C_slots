@@ -24,20 +24,18 @@ void Machine::generate()
 	
 	arr.clear();
 	matches.clear();
-	int highest = 0;
 
 	arr.insert(arr.end(), { getRandomNumber(), getRandomNumber(), getRandomNumber() });
 
-	matches.push_back(std::count(arr.begin(), arr.end(), arr[0]));
-	matches.push_back(std::count(arr.begin(), arr.end(), arr[1]));
-	matches.push_back(std::count(arr.begin(), arr.end(), arr[2]));
+	matches.insert(matches.end(),
+	{
+		std::count(arr.begin(), arr.end(), arr[0]),
+		std::count(arr.begin(), arr.end(), arr[1]),
+		std::count(arr.begin(), arr.end(), arr[2])
+	});
 
-	highest = *max_element(std::begin(matches), std::end(matches));
+	int highest = *max_element(std::begin(matches), std::end(matches));
 	
-	std::cout << std::to_string(arr[0]) + " - ";
-	std::cout << std::to_string(arr[1]) + " - ";
-	std::cout << std::to_string(arr[2]) << std::endl;
-
 	std::cout << std::endl << output(arr, highest) << std::endl;
 }
 
@@ -52,6 +50,11 @@ int Machine::getRandomNumber()
 
 std::string Machine::output(std::vector<int> a, int matched)
 {
+
+	std::cout << std::to_string(arr[0]) + " - ";
+	std::cout << std::to_string(arr[1]) + " - ";
+	std::cout << std::to_string(arr[2]) << std::endl;
+
 	if (matched == 1)
 	{
 		player.removeMoney(20);

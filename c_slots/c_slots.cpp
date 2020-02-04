@@ -29,7 +29,7 @@ int main()
 	{
 		if ((command.compare("money")) == 0)
 		{
-			std::cout << "You currently have " + std::to_string(machine.getPlayer().getMoney()) + "." << std::endl;
+			std::cout << "You currently have €" + std::to_string(machine.getPlayer().getMoney()) + "." << std::endl;
 		}
 		else
 		{

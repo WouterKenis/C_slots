@@ -25,8 +25,9 @@ int main()
 	std::cout << std::endl << "Available commands are: stop, play, money." << std::endl;
 	std::cin >> command;
 
-	while ((command.compare("play")) == 0 || (command.compare("money")) == 0)
+	while (((command.compare("play")) == 0 || (command.compare("money")) == 0) && machine.getPlayer().getMoney() >= 20)
 	{
+
 		if ((command.compare("money")) == 0)
 		{
 			std::cout << "You currently have €" + std::to_string(machine.getPlayer().getMoney()) + "." << std::endl;

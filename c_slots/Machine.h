@@ -22,6 +22,6 @@ public:
 	std::vector<int> getNumbers() const { return arr; };
 	void generate();
 	int getRandomNumber();
-	std::string output(std::vector<int> a, int matched);
+	std::string output(int matched);
 };
 

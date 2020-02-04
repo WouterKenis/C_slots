@@ -36,7 +36,7 @@ void Machine::generate()
 
 	int highest = *max_element(std::begin(matches), std::end(matches));
 	
-	std::cout << std::endl << output(arr, highest) << std::endl;
+	std::cout << std::endl << output(highest) << std::endl;
 }
 
 int Machine::getRandomNumber()
@@ -48,7 +48,7 @@ int Machine::getRandomNumber()
 	return dist(mt);
 }
 
-std::string Machine::output(std::vector<int> a, int matched)
+std::string Machine::output(int matched)
 {
 
 	std::cout << std::to_string(arr[0]) + " - ";
@@ -67,7 +67,7 @@ std::string Machine::output(std::vector<int> a, int matched)
 		}
 		else {
 			player.addMoney(1000);
-			return "Jackpot €1000.";
+			return "Jackpot, you won €1000.";
 		}
 	}
 }
